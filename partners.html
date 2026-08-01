@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Partners | RoyalBet</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Config -->
+    <script src="js/config.js"></script>
+    
+    <style>
+        .page-header {
+            background-color: var(--color-bg-secondary);
+            padding: 150px 0 80px;
+            text-align: center;
+            border-bottom: var(--border-gold);
+        }
+        
+        .partner-card {
+            display: flex;
+            background: var(--color-bg-card);
+            border: var(--border-gold);
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 168, 67, 0.2);
+        }
+        
+        .partner-image {
+            width: 300px;
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .partner-info {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .partner-card {
+                flex-direction: column;
+            }
+            .partner-image {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet Logo" style="height: 60px;">
+            </a>
+            
+            <button class="hamburger">☰</button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html" class="text-gold">Partners</a>
+                <a href="betting.html">Online Betting</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact Us</a>
+                <button id="theme-toggle" style="background: none; border: none; color: var(--color-gold-main); font-size: 1.2rem; cursor: pointer;" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Verified Platforms</h1>
+            <p style="color: var(--color-text-muted); font-size: 1.1rem;">Play on the most secure and trusted betting exchanges via RoyalBet.</p>
+        </div>
+    </section>
+
+    <!-- Partners Content -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Partner 1: Sky Exchange -->
+            <div class="partner-card">
+                <div class="partner-image">
+                    <h2 class="text-gold" style="font-size: 2rem; font-weight: 800;">SKY EXCHANGE</h2>
+                    <span style="font-size: 0.8rem; color: #888; margin-top: 8px;">Official Partner</span>
+                </div>
+                <div class="partner-info">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Sky Exchange</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">The largest betting exchange in Asia, offering unmatched odds and liquidity for cricket, tennis, and live casino.</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; color: var(--color-text-muted);">
+                        <li><i class="fas fa-check text-red"></i> Best Cricket Odds</li>
+                        <li><i class="fas fa-check text-red"></i> Live Casino Tables</li>
+                        <li><i class="fas fa-check text-red"></i> 2-Min Instant Withdrawal</li>
+                        <li><i class="fas fa-check text-red"></i> Fancy Session Markets</li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                        <a data-config="whatsappLink" href="#" class="btn btn-primary">Get Sky Exch ID <i class="fab fa-whatsapp"></i></a>
+                        <button class="btn btn-outline copy-demo-btn" data-id="demo123" data-pass="123456" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+                            <i class="fas fa-copy"></i> Copy Demo ID (demo123)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner 2: Lotus Exchange -->
+            <div class="partner-card">
+                <div class="partner-image">
+                    <h2 style="color: #4CAF50; font-size: 2rem; font-weight: 800;">LOTUS EXCH</h2>
+                    <span style="font-size: 0.8rem; color: #888; margin-top: 8px;">Official Partner</span>
+                </div>
+                <div class="partner-info">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Lotus Exchange</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">Premium platform specifically tailored for high rollers, featuring exclusive casino tables, auto deposit, and VIP limits.</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; color: var(--color-text-muted);">
+                        <li><i class="fas fa-check text-gold"></i> VIP High Limits</li>
+                        <li><i class="fas fa-check text-gold"></i> Exclusive Live Tables</li>
+                        <li><i class="fas fa-check text-gold"></i> Ultra Fast Bet Placement</li>
+                        <li><i class="fas fa-check text-gold"></i> 7% Weekly Loss Cashback</li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                        <a data-config="whatsappLink" href="#" class="btn btn-gold">Get Lotus Exch ID <i class="fab fa-whatsapp"></i></a>
+                        <button class="btn btn-outline copy-demo-btn" data-id="lotus77" data-pass="play123" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+                            <i class="fas fa-copy"></i> Copy Demo ID (lotus77)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner 3: Diamond Exchange -->
+            <div class="partner-card">
+                <div class="partner-image">
+                    <h2 style="color: #2196F3; font-size: 2rem; font-weight: 800;">DIAMOND EXCH</h2>
+                    <span style="font-size: 0.8rem; color: #888; margin-top: 8px;">Official Partner</span>
+                </div>
+                <div class="partner-info">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Diamond Exchange</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">Renowned for world-class security, sports exchange liquidity, and 24/7 dedicated account support.</p>
+                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; color: var(--color-text-muted);">
+                        <li><i class="fas fa-check text-red"></i> 24/7 Dedicated Support</li>
+                        <li><i class="fas fa-check text-red"></i> Real-time Live Score Updates</li>
+                        <li><i class="fas fa-check text-red"></i> Multiple Deposit Options</li>
+                        <li><i class="fas fa-check text-red"></i> Guaranteed Payout Protection</li>
+                    </ul>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                        <a data-config="whatsappLink" href="#" class="btn btn-primary">Get Diamond Exch ID <i class="fab fa-whatsapp"></i></a>
+                        <button class="btn btn-outline copy-demo-btn" data-id="dia888" data-pass="winwin" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+                            <i class="fas fa-copy"></i> Copy Demo ID (dia888)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet" style="height: 40px; margin-bottom: 15px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;">RoyalBet is India's most trusted online sports betting and casino exchange platform. We provide a safe, secure, and fast betting experience.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="betting.html">Online Betting</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">18+ Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Contact Us</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><i class="fab fa-whatsapp text-red"></i> <a data-config="whatsappLink" href="#"><span data-config="whatsapp">+91 98765 43210</span></a></li>
+                        <li><i class="fas fa-envelope text-red"></i> <a data-config="email" href="mailto:support@royalbet.com">support@royalbet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span data-config="copyright">RoyalBet</span>. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #555;"><span data-config="footerDisclaimer">Warning: Gambling involves financial risk and can be addictive. Please play responsibly. 18+ only.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

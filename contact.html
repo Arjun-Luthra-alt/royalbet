@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RoyalBet</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Config -->
+    <script src="js/config.js"></script>
+    
+    <style>
+        .page-header {
+            background-color: var(--color-bg-secondary);
+            padding: 150px 0 80px;
+            text-align: center;
+            border-bottom: var(--border-gold);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: var(--color-text-main);
+            font-family: var(--font-body);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-gold-main);
+        }
+        
+        .contact-info-card {
+            background: var(--color-bg-card);
+            padding: 1.8rem;
+            border-radius: var(--border-radius);
+            border: var(--border-gold);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 168, 67, 0.1);
+            color: var(--color-gold-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet Logo" style="height: 60px;">
+            </a>
+            
+            <button class="hamburger">☰</button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+                <a href="betting.html">Online Betting</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="text-gold">Contact Us</a>
+                <button id="theme-toggle" style="background: none; border: none; color: var(--color-gold-main); font-size: 1.2rem; cursor: pointer;" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Get In Touch</h1>
+            <p style="color: var(--color-text-muted); font-size: 1.1rem;">We are here to help you 24/7 with deposits, instant withdrawals, and ID setup.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container contact-grid">
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Fastest Customer Support</h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.6;">Our dedicated support managers are available around the clock. Connect with us instantly on WhatsApp or send a message below.</p>
+                
+                <div class="contact-info-card">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <h4 style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 5px;">24/7 WhatsApp Desk</h4>
+                        <a data-config="whatsappLink" href="#" style="font-size: 1.2rem; font-weight: bold; color: var(--color-gold-main);"><span data-config="whatsapp">+91 98765 43210</span></a>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4 style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 5px;">Email Support</h4>
+                        <a data-config="email" href="mailto:support@royalbet.com" style="font-size: 1.2rem; font-weight: bold; color: var(--color-text-main);">support@royalbet.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon" style="color: var(--color-red-main); background: rgba(230, 57, 70, 0.1);"><i class="fas fa-bolt"></i></div>
+                    <div>
+                        <h4 style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 5px;">Withdrawal Speed</h4>
+                        <span style="font-size: 1.1rem; font-weight: bold; color: #4CAF50;">Average 2 Minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card" style="border: var(--border-gold);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-gold-main);">Send Us a Message</h3>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" class="form-control" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="contact-phone" class="form-control" placeholder="Your WhatsApp / Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="contact-subject" class="form-control" required style="background: #111;">
+                            <option value="" disabled selected>Select Subject</option>
+                            <option value="Get New ID">Get New ID</option>
+                            <option value="Deposit Query">Deposit Query</option>
+                            <option value="Withdrawal Issue">Withdrawal Issue</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" class="form-control" rows="4" placeholder="Describe your query..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fab fa-whatsapp"></i> Submit & Connect via WhatsApp
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section" style="background-color: var(--color-bg-secondary);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Got questions? Find instant answers below.</p>
+
+            <div class="faq-item active">
+                <div class="faq-header">
+                    <span>How do I get a new betting ID?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <p>Simply click the "Get Your ID Now" or WhatsApp button. Message our 24/7 team on WhatsApp, transfer your initial deposit via UPI or bank transfer, and your credentials will be generated within 2 minutes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>How fast are withdrawals processed?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <p>Withdrawals are processed automatically within 2 minutes. Once requested on WhatsApp, funds are wired directly to your registered UPI ID or bank account without delay.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>What is the minimum deposit and withdrawal amount?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-body">
+                    <p>The minimum deposit is ₹500 and minimum withdrawal is ₹1,000. There is no upper ceiling for VIP accounts on Lotus Exchange and Diamond Exch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet" style="height: 40px; margin-bottom: 15px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;">RoyalBet is India's most trusted online sports betting and casino exchange platform. We provide a safe, secure, and fast betting experience.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="betting.html">Online Betting</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">18+ Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Contact Us</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><i class="fab fa-whatsapp text-red"></i> <a data-config="whatsappLink" href="#"><span data-config="whatsapp">+91 98765 43210</span></a></li>
+                        <li><i class="fas fa-envelope text-red"></i> <a data-config="email" href="mailto:support@royalbet.com">support@royalbet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span data-config="copyright">RoyalBet</span>. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #555;"><span data-config="footerDisclaimer">Warning: Gambling involves financial risk and can be addictive. Please play responsibly. 18+ only.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contact-name').value;
+                const subject = document.getElementById('contact-subject').value;
+                const message = document.getElementById('contact-message').value;
+
+                if (window.showToast) {
+                    window.showToast('Redirecting to WhatsApp support manager...', 'success');
+                }
+                
+                const waNum = (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.whatsappLink) ? SITE_CONFIG.whatsappLink : 'https://wa.me/911234567890';
+                const text = encodeURIComponent(`Hello RoyalBet Support, My name is ${name}. Query (${subject}): ${message}`);
+                
+                setTimeout(() => {
+                    window.open(`${waNum}?text=${text}`, '_blank');
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>

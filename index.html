@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalBet | Premium Online Gaming & Sports Betting</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Site Config (edit js/config.js to change all placeholders) -->
+    <script src="js/config.js"></script>
+    
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), url('assets/images/hero_bg_1784818849227.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-xl) 0;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--color-bg-main), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            border: 2px solid var(--color-gold-main);
+            padding: var(--space-lg);
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 40px rgba(212, 168, 67, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--color-gold-main);
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+        
+        /* Specific Sections */
+        .partners-section .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+        
+        .partner-logo {
+            font-size: 2rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--color-gold-main);
+        }
+        
+        .partner-details ul {
+            display: flex;
+            gap: 1rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .partner-details ul li i {
+            color: var(--color-red-main);
+            margin-right: 5px;
+        }
+        
+        .footer {
+            background-color: var(--color-bg-secondary);
+            border-top: var(--border-gold);
+            padding-top: var(--space-lg);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: var(--space-sm) 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet Logo" style="height: 60px;">
+            </a>
+            
+            <button class="hamburger">☰</button>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="text-gold">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+                <a href="betting.html">Online Betting</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact Us</a>
+                <button id="theme-toggle" style="background: none; border: none; color: var(--color-gold-main); font-size: 1.2rem; cursor: pointer;" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ticker -->
+    <div style="padding-top: 80px;">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <span class="ticker-item"><i class="fas fa-futbol"></i> SOCCER</span>
+                <span class="ticker-item"><i class="fas fa-cricket-bat-ball"></i> CRICKET</span>
+                <span class="ticker-item"><i class="fas fa-table-tennis-paddle-ball"></i> TENNIS</span>
+                <span class="ticker-item"><i class="fas fa-slot-machine"></i> SLOT GAMES</span>
+                <span class="ticker-item"><i class="fas fa-cards"></i> LIVE CASINO</span>
+                <!-- Repeat for infinite scroll effect -->
+                <span class="ticker-item"><i class="fas fa-futbol"></i> SOCCER</span>
+                <span class="ticker-item"><i class="fas fa-cricket-bat-ball"></i> CRICKET</span>
+                <span class="ticker-item"><i class="fas fa-table-tennis-paddle-ball"></i> TENNIS</span>
+                <span class="ticker-item"><i class="fas fa-slot-machine"></i> SLOT GAMES</span>
+                <span class="ticker-item"><i class="fas fa-cards"></i> LIVE CASINO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>INDIA'S #1 TRUSTED PLATFORM</h1>
+                <p>Experience the thrill of online betting with RoyalBet. Instant withdrawals, 24/7 support, and the best odds on cricket, soccer, and live casino games.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" data-config="whatsappLink" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Get Your ID Now
+                    </a>
+                    <a href="#partners" class="btn btn-outline">Explore Platforms</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section partners-section">
+        <div class="container">
+            <h2 class="section-title">Our Premium Partners</h2>
+            <p class="section-subtitle">Choose from our selection of highly trusted and verified betting platforms.</p>
+            
+            <!-- Partner Card 1 -->
+            <div class="card">
+                <div class="partner-logo">SKY EXCHANGE</div>
+                <div class="partner-details">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Instant Withdrawal</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                        <li><i class="fas fa-check-circle"></i> 10% Welcome Bonus</li>
+                    </ul>
+                    <div style="margin-top: 10px; font-size: 0.85rem; color: #888;">
+                        Demo ID: <strong>demo123</strong> | Pass: <strong>123456</strong>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                    <button class="btn btn-outline copy-demo-btn" data-id="demo123" data-pass="123456" style="font-size: 0.8rem; padding: 0.5rem 1rem;">
+                        <i class="fas fa-copy"></i> Copy Demo
+                    </button>
+                    <a href="betting.html" class="btn btn-gold" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Play Now</a>
+                </div>
+            </div>
+            
+            <!-- Partner Card 2 -->
+            <div class="card">
+                <div class="partner-logo" style="color: #4CAF50;">LOTUS EXCHANGE</div>
+                <div class="partner-details">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Live Casino</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Deposit</li>
+                        <li><i class="fas fa-check-circle"></i> High Limits</li>
+                    </ul>
+                    <div style="margin-top: 10px; font-size: 0.85rem; color: #888;">
+                        Demo ID: <strong>lotus77</strong> | Pass: <strong>play123</strong>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                    <button class="btn btn-outline copy-demo-btn" data-id="lotus77" data-pass="play123" style="font-size: 0.8rem; padding: 0.5rem 1rem;">
+                        <i class="fas fa-copy"></i> Copy Demo
+                    </button>
+                    <a href="betting.html" class="btn btn-gold" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Play Now</a>
+                </div>
+            </div>
+
+            <!-- Partner Card 3 -->
+            <div class="card">
+                <div class="partner-logo" style="color: #2196F3;">DIAMOND EXCH</div>
+                <div class="partner-details">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> VIP Tables</li>
+                        <li><i class="fas fa-check-circle"></i> Weekly Cashback</li>
+                        <li><i class="fas fa-check-circle"></i> Best Odds</li>
+                    </ul>
+                    <div style="margin-top: 10px; font-size: 0.85rem; color: #888;">
+                        Demo ID: <strong>dia888</strong> | Pass: <strong>winwin</strong>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                    <button class="btn btn-outline copy-demo-btn" data-id="dia888" data-pass="winwin" style="font-size: 0.8rem; padding: 0.5rem 1rem;">
+                        <i class="fas fa-copy"></i> Copy Demo
+                    </button>
+                    <a href="betting.html" class="btn btn-gold" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section class="section" style="background-color: var(--color-bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Latest Promotions</h2>
+            
+            <div class="grid-3">
+                <div class="card" style="border: var(--border-red); text-align: center;">
+                    <h3 class="text-red" style="font-size: 2rem; margin-bottom: 10px;">10% Welcome Bonus</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">On your first deposit up to ₹10,000.</p>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Claim Now</a>
+                </div>
+                <div class="card" style="border: var(--border-gold); text-align: center;">
+                    <h3 class="text-gold" style="font-size: 2rem; margin-bottom: 10px;">5% Refill Bonus</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">On every subsequent deposit you make.</p>
+                    <a href="#" class="btn btn-gold" style="width: 100%;">Claim Now</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">7% Weekly Cashback</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">Get cashback on your net losses every Monday.</p>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How To Start Playing</h2>
+            
+            <div class="grid-4">
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--color-red-main); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold;">1</div>
+                    <h4>Message Us</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 10px;">Click the WhatsApp button to message our team.</p>
+                </div>
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--color-gold-main); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold;">2</div>
+                    <h4>Deposit Funds</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 10px;">Send money via UPI, Bank Transfer, or Crypto.</p>
+                </div>
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--color-red-main); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold;">3</div>
+                    <h4>Get Your ID</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 10px;">Receive your personalized login credentials instantly.</p>
+                </div>
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--color-gold-main); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold;">4</div>
+                    <h4>Play & Win</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 10px;">Log in, place your bets, and request instant withdrawals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="section" style="background: linear-gradient(90deg, rgba(212,168,67,0.1), rgba(230,57,70,0.1)); padding: var(--space-md) 0;">
+        <div class="container">
+            <div class="grid-4 text-center">
+                <div>
+                    <i class="fas fa-shield-alt text-gold" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h4>100% Trusted</h4>
+                </div>
+                <div>
+                    <i class="fas fa-bolt text-red" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h4>2 Min Withdrawals</h4>
+                </div>
+                <div>
+                    <i class="fas fa-users text-gold" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h4><span data-config="users">500K+</span> Users</h4>
+                </div>
+                <div>
+                    <i class="fas fa-headset text-red" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                    <h4>24/7 Support</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet" style="height: 40px; margin-bottom: 15px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;">RoyalBet is India's most trusted online sports betting and casino exchange platform. We provide a safe, secure, and fast betting experience.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">18+ Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Contact Us</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><i class="fab fa-whatsapp text-red"></i> <a data-config="whatsappLink" href="#"><span data-config="whatsapp">+91 98765 43210</span></a></li>
+                        <li><i class="fas fa-envelope text-red"></i> <a data-config="email" href="mailto:support@royalbet.com">support@royalbet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span data-config="copyright">RoyalBet</span>. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #555;"><span data-config="footerDisclaimer">Warning: Gambling involves financial risk and can be addictive. Please play responsibly. 18+ only.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (config.js must come before main.js) -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

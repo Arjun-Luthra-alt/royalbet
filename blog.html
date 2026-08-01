@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | RoyalBet</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Config -->
+    <script src="js/config.js"></script>
+    
+    <style>
+        .page-header {
+            background-color: var(--color-bg-secondary);
+            padding: 150px 0 80px;
+            text-align: center;
+            border-bottom: var(--border-gold);
+        }
+        
+        .blog-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold-main);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .blog-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--color-gold-main);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet Logo" style="height: 60px;">
+            </a>
+            
+            <button class="hamburger">☰</button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+                <a href="betting.html">Online Betting</a>
+                <a href="blog.html" class="text-gold">Blog</a>
+                <a href="contact.html">Contact Us</a>
+                <button id="theme-toggle" style="background: none; border: none; color: var(--color-gold-main); font-size: 1.2rem; cursor: pointer;" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="section-title">Betting Tips & News</h1>
+            <p style="color: var(--color-text-muted); font-size: 1.1rem;">Stay updated with the latest sports insights, odds analysis, and bankroll strategies.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-3">
+                
+                <!-- Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('assets/images/hero_bg_1784818849227.png');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><i class="fas fa-cricket-bat-ball"></i> CRICKET • Oct 24, 2026</div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Top 5 Strategies for IPL Betting</h3>
+                        <p class="text-muted" style="margin-bottom: 20px; flex-grow: 1;">Maximize your win rate during the IPL season with disciplined bankroll management, pitch reading, and session timing...</p>
+                        <button class="btn btn-outline read-article-btn" 
+                                data-title="Top 5 Strategies for IPL Betting"
+                                data-cat="CRICKET • Oct 24, 2026"
+                                data-body="Cricket betting in IPL requires more than just picking your favorite team. Key strategies include:<br><br>1. <strong>Bankroll Management:</strong> Never stake more than 5% of your total balance on a single match.<br>2. <strong>Pitch & Toss Analysis:</strong> Dew factor in evening matches heavily favors teams chasing.<br>3. <strong>Fancy Market Hedging:</strong> Lock in profits during session overs (6 Overs / 15 Overs) when odds shift.<br>4. <strong>Stick to Verified Exchanges:</strong> Always bet on high liquidity servers like Sky Exchange for fast odds execution."
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('assets/images/about_us_1784812813359.png');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><i class="fas fa-dice"></i> CASINO • Oct 22, 2026</div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Understanding Roulette Odds</h3>
+                        <p class="text-muted" style="margin-bottom: 20px; flex-grow: 1;">A comprehensive breakdown of European vs American roulette, outside bet probabilities, and smart betting grids...</p>
+                        <button class="btn btn-outline read-article-btn" 
+                                data-title="Understanding Roulette Odds"
+                                data-cat="CASINO • Oct 22, 2026"
+                                data-body="Roulette is one of the most popular live casino games. Here is how to understand odds:<br><br>1. <strong>European vs American:</strong> European roulette features a single zero (2.7% house edge), whereas American roulette has double zero (5.26% house edge). Always choose European tables.<br>2. <strong>Outside Bets:</strong> Red/Black, Even/Odd, and 1-18/19-36 pay 1:1 with a ~48.6% probability.<br>3. <strong>Lightning Multipliers:</strong> On Sky Casino tables, lucky lightning numbers can boost single-number payouts up to 500x!"
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('assets/images/contact_us_1784812964440.png');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta"><i class="fas fa-newspaper"></i> NEWS • Oct 20, 2026</div>
+                        <h3 style="margin-bottom: 15px; font-size: 1.3rem;">Instant UPI & Crypto Withdrawals</h3>
+                        <p class="text-muted" style="margin-bottom: 20px; flex-grow: 1;">We have officially integrated automated UPI payouts and zero-fee USDT withdrawals for all active RoyalBet users...</p>
+                        <button class="btn btn-outline read-article-btn" 
+                                data-title="Instant UPI & Crypto Withdrawals"
+                                data-cat="NEWS • Oct 20, 2026"
+                                data-body="RoyalBet has upgraded payout infrastructure to ensure the fastest processing in the industry:<br><br>• <strong>2-Minute Auto Withdrawals:</strong> UPI and IMPS bank transfers are processed automatically.<br>• <strong>Crypto Support:</strong> USDT (TRC-20) deposits and payouts are now available for all VIP members.<br>• <strong>No Hidden Fees:</strong> 100% of your winning amount is transferred directly to your verified account without deductions."
+                                style="padding: 0.5rem 1rem; font-size: 0.85rem; width: 100%;">
+                            Read Article <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Reader Modal -->
+    <div class="modal-overlay" id="article-modal">
+        <div class="modal-container" style="max-width: 650px;">
+            <button class="modal-close" id="article-modal-close">&times;</button>
+            <div id="art-meta" style="font-size: 0.85rem; color: var(--color-gold-main); font-weight: 700; margin-bottom: 5px;"></div>
+            <h2 id="art-title" style="color: var(--color-text-main); font-size: 1.8rem; margin-bottom: 1.5rem;"></h2>
+            <div id="art-body" style="line-height: 1.8; color: var(--color-text-muted); font-size: 1rem; margin-bottom: 2rem;"></div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Ready to place your bets?</span>
+                <a data-config="whatsappLink" href="#" class="btn btn-gold" style="font-size: 0.85rem;">Get ID Now <i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet" style="height: 40px; margin-bottom: 15px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;">RoyalBet is India's most trusted online sports betting and casino exchange platform. We provide a safe, secure, and fast betting experience.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="betting.html">Online Betting</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">18+ Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Contact Us</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><i class="fab fa-whatsapp text-red"></i> <a data-config="whatsappLink" href="#"><span data-config="whatsapp">+91 98765 43210</span></a></li>
+                        <li><i class="fas fa-envelope text-red"></i> <a data-config="email" href="mailto:support@royalbet.com">support@royalbet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span data-config="copyright">RoyalBet</span>. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #555;"><span data-config="footerDisclaimer">Warning: Gambling involves financial risk and can be addictive. Please play responsibly. 18+ only.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Blog Reader Modal Logic
+        const articleModal = document.getElementById('article-modal');
+        const artClose = document.getElementById('article-modal-close');
+        const artTitle = document.getElementById('art-title');
+        const artMeta = document.getElementById('art-meta');
+        const artBody = document.getElementById('art-body');
+
+        document.querySelectorAll('.read-article-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                artTitle.textContent = btn.getAttribute('data-title');
+                artMeta.textContent = btn.getAttribute('data-cat');
+                artBody.innerHTML = btn.getAttribute('data-body');
+                articleModal.classList.add('active');
+            });
+        });
+
+        if (artClose && articleModal) {
+            artClose.addEventListener('click', () => articleModal.classList.remove('active'));
+            articleModal.addEventListener('click', (e) => {
+                if (e.target === articleModal) articleModal.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

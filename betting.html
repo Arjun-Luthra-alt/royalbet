@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Betting & Live Odds | RoyalBet</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Site Config -->
+    <script src="js/config.js"></script>
+    
+    <style>
+        .betting-hero {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95)), url('assets/images/hero_bg_1784818849227.png');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 0 60px;
+            text-align: center;
+            border-bottom: var(--border-gold);
+        }
+        
+        .bet-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .bet-card:hover {
+            border-color: var(--color-gold-main);
+            box-shadow: 0 10px 25px rgba(212, 168, 67, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 0.8rem;
+        }
+
+        .teams-display {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .team-name {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .vs-badge {
+            font-size: 0.8rem;
+            color: var(--color-gold-main);
+            font-weight: 800;
+            background: rgba(212, 168, 67, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .odds-row {
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            margin-top: 0.5rem;
+        }
+
+        /* Bet Slip Drawer */
+        .bet-slip-panel {
+            background: var(--color-bg-secondary);
+            border: var(--border-gold);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .betting-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .betting-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet Logo" style="height: 60px;">
+            </a>
+            
+            <button class="hamburger">☰</button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+                <a href="betting.html" class="text-gold">Online Betting</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact Us</a>
+                <button id="theme-toggle" style="background: none; border: none; color: var(--color-gold-main); font-size: 1.2rem; cursor: pointer;" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <a href="#" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Login / Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ticker -->
+    <div style="padding-top: 80px;">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <span class="ticker-item"><i class="fas fa-cricket-bat-ball"></i> INDIA VS AUSTRALIA — LIVE 1.85 / 1.95</span>
+                <span class="ticker-item"><i class="fas fa-futbol"></i> REAL MADRID VS BARCELONA — LIVE 2.10 / 3.40</span>
+                <span class="ticker-item"><i class="fas fa-table-tennis-paddle-ball"></i> DJOKOVIC VS ALCARAZ — LIVE 1.70 / 2.15</span>
+                <span class="ticker-item"><i class="fas fa-dice"></i> LIVE CASINO SPEED BACCARAT — OPEN</span>
+                <span class="ticker-item"><i class="fas fa-cricket-bat-ball"></i> INDIA VS AUSTRALIA — LIVE 1.85 / 1.95</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="betting-hero">
+        <div class="container">
+            <h1 class="section-title">Live Betting & Odds</h1>
+            <p class="section-subtitle">Real-time match rates, fancy markets, and instant bet slips across India's top exchange servers.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Category Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-pill active" data-category="all"><i class="fas fa-fire"></i> All Matches</button>
+                <button class="filter-pill" data-category="cricket"><i class="fas fa-cricket-bat-ball"></i> Cricket (IPL & T20)</button>
+                <button class="filter-pill" data-category="football"><i class="fas fa-futbol"></i> Football Premier League</button>
+                <button class="filter-pill" data-category="tennis"><i class="fas fa-table-tennis-paddle-ball"></i> Tennis Grand Slam</button>
+                <button class="filter-pill" data-category="casino"><i class="fas fa-cards"></i> Live Casino</button>
+            </div>
+
+            <div class="betting-layout">
+                
+                <!-- Match Feed Grid -->
+                <div id="matches-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <!-- Match Card 1: Cricket -->
+                    <div class="bet-card" data-cat="cricket">
+                        <div class="match-header">
+                            <div>
+                                <span class="live-badge"><span class="live-badge-dot"></span> LIVE 2nd INNINGS</span>
+                                <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-left: 10px;">T20 International Match</span>
+                            </div>
+                            <span style="font-size: 0.85rem; color: var(--color-gold-main); font-weight: 600;">Sky Exchange</span>
+                        </div>
+                        
+                        <div class="teams-display">
+                            <div>
+                                <div class="team-name">India</div>
+                                <div style="font-size: 0.9rem; color: var(--color-gold-main); margin-top: 4px;">185/4 (18.2 Ov)</div>
+                            </div>
+                            <div class="vs-badge">VS</div>
+                            <div>
+                                <div class="team-name">Australia</div>
+                                <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px;">182/8 (20.0 Ov)</div>
+                            </div>
+                        </div>
+
+                        <div class="odds-row">
+                            <button class="odds-btn" data-team="India" data-odds="1.85">
+                                <span class="odds-lbl">Back India</span>
+                                <span class="odds-val">1.85</span>
+                            </button>
+                            <button class="odds-btn" data-team="Australia" data-odds="1.95">
+                                <span class="odds-lbl">Back Australia</span>
+                                <span class="odds-val">1.95</span>
+                            </button>
+                            <button class="odds-btn" data-team="Tie" data-odds="15.0">
+                                <span class="odds-lbl">Tie / Draw</span>
+                                <span class="odds-val">15.0</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Match Card 2: Football -->
+                    <div class="bet-card" data-cat="football">
+                        <div class="match-header">
+                            <div>
+                                <span class="live-badge"><span class="live-badge-dot"></span> LIVE 65'</span>
+                                <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-left: 10px;">UEFA Champions League</span>
+                            </div>
+                            <span style="font-size: 0.85rem; color: #4CAF50; font-weight: 600;">Lotus Exchange</span>
+                        </div>
+                        
+                        <div class="teams-display">
+                            <div>
+                                <div class="team-name">Real Madrid</div>
+                                <div style="font-size: 0.9rem; color: var(--color-gold-main); margin-top: 4px;">2 Goals</div>
+                            </div>
+                            <div class="vs-badge">VS</div>
+                            <div>
+                                <div class="team-name">Barcelona</div>
+                                <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px;">1 Goal</div>
+                            </div>
+                        </div>
+
+                        <div class="odds-row">
+                            <button class="odds-btn" data-team="Real Madrid" data-odds="1.45">
+                                <span class="odds-lbl">Back Madrid</span>
+                                <span class="odds-val">1.45</span>
+                            </button>
+                            <button class="odds-btn" data-team="Draw" data-odds="3.60">
+                                <span class="odds-lbl">Draw</span>
+                                <span class="odds-val">3.60</span>
+                            </button>
+                            <button class="odds-btn" data-team="Barcelona" data-odds="4.20">
+                                <span class="odds-lbl">Back Barca</span>
+                                <span class="odds-val">4.20</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Match Card 3: Tennis -->
+                    <div class="bet-card" data-cat="tennis">
+                        <div class="match-header">
+                            <div>
+                                <span class="live-badge"><span class="live-badge-dot"></span> LIVE SET 3</span>
+                                <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-left: 10px;">Wimbledon Final</span>
+                            </div>
+                            <span style="font-size: 0.85rem; color: #2196F3; font-weight: 600;">Diamond Exch</span>
+                        </div>
+                        
+                        <div class="teams-display">
+                            <div>
+                                <div class="team-name">Novak Djokovic</div>
+                                <div style="font-size: 0.9rem; color: var(--color-gold-main); margin-top: 4px;">6-4, 3-6, 4-3</div>
+                            </div>
+                            <div class="vs-badge">VS</div>
+                            <div>
+                                <div class="team-name">Carlos Alcaraz</div>
+                                <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px;">4-6, 6-3, 3-4</div>
+                            </div>
+                        </div>
+
+                        <div class="odds-row">
+                            <button class="odds-btn" data-team="Novak Djokovic" data-odds="1.72">
+                                <span class="odds-lbl">Back Djokovic</span>
+                                <span class="odds-val">1.72</span>
+                            </button>
+                            <button class="odds-btn" data-team="Carlos Alcaraz" data-odds="2.10">
+                                <span class="odds-lbl">Back Alcaraz</span>
+                                <span class="odds-val">2.10</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Match Card 4: Casino -->
+                    <div class="bet-card" data-cat="casino">
+                        <div class="match-header">
+                            <div>
+                                <span class="live-badge" style="background: rgba(212, 168, 67, 0.2); color: var(--color-gold-main); border-color: var(--color-gold-main);"><span class="live-badge-dot" style="background-color: var(--color-gold-main);"></span> 24/7 OPEN</span>
+                                <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-left: 10px;">Evolution Live Table</span>
+                            </div>
+                            <span style="font-size: 0.85rem; color: var(--color-gold-main); font-weight: 600;">Sky Casino</span>
+                        </div>
+                        
+                        <div class="teams-display">
+                            <div>
+                                <div class="team-name">Speed Baccarat A</div>
+                                <div style="font-size: 0.9rem; color: var(--color-gold-main); margin-top: 4px;">Min ₹100 | Max ₹5,00,000</div>
+                            </div>
+                            <div class="vs-badge"><i class="fas fa-cards fa-lg"></i></div>
+                            <div>
+                                <div class="team-name">Lightning Roulette</div>
+                                <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 4px;">500x Multipliers</div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 0.5rem;">
+                            <a data-config="whatsappLink" href="#" class="btn btn-gold" style="width: 100%;">
+                                <i class="fas fa-play-circle"></i> Play Live Casino Table
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sticky Bet Slip Panel -->
+                <div>
+                    <div class="bet-slip-panel">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.2rem; color: var(--color-gold-main);"><i class="fas fa-receipt"></i> Quick Bet Calculator</h3>
+                            <span id="slip-status" style="font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">Select Odds</span>
+                        </div>
+
+                        <div id="slip-empty" style="text-align: center; padding: 2rem 0; color: var(--color-text-muted);">
+                            <i class="fas fa-hand-pointer fa-2x" style="margin-bottom: 10px; opacity: 0.5;"></i>
+                            <p style="font-size: 0.9rem;">Click any odds button on a match card to calculate your payout.</p>
+                        </div>
+
+                        <div id="slip-content" style="display: none;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Selected Pick</div>
+                                <div id="slip-team" style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--color-gold-main); margin: 4px 0;">India</div>
+                                <div style="font-size: 0.85rem;">Odds: <strong id="slip-odds" class="text-red">1.85</strong></div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1rem;">
+                                <label style="font-size: 0.85rem; color: var(--color-text-muted); display: block; margin-bottom: 5px;">Stake Amount (₹)</label>
+                                <input type="number" id="slip-stake" class="form-control" value="1000" min="100" step="100">
+                            </div>
+
+                            <div style="border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 1rem; margin-bottom: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--color-text-muted);">
+                                    <span>Estimated Return:</span>
+                                    <strong id="slip-return" style="color: #4CAF50; font-size: 1.1rem;">₹1,850</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 5px;">
+                                    <span>Net Profit:</span>
+                                    <strong id="slip-profit" style="color: var(--color-gold-main);">₹850</strong>
+                                </div>
+                            </div>
+
+                            <a data-config="whatsappLink" href="#" class="btn btn-primary" style="width: 100%; font-size: 0.95rem;">
+                                <i class="fab fa-whatsapp"></i> Place Bet via WhatsApp ID
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/images/royalbet_logo_1784818836468.png" alt="RoyalBet" style="height: 40px; margin-bottom: 15px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;">RoyalBet is India's most trusted online sports betting and casino exchange platform. We provide a safe, secure, and fast betting experience.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="width: 40px; height: 40px; background: #333; display: flex; align-items: center; justify-content: center; border-radius: 50%;"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Quick Links</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="betting.html">Online Betting</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                        <li><a href="#">18+ Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold" style="margin-bottom: 15px;">Contact Us</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--color-text-muted);">
+                        <li><i class="fab fa-whatsapp text-red"></i> <a data-config="whatsappLink" href="#"><span data-config="whatsapp">+91 98765 43210</span></a></li>
+                        <li><i class="fas fa-envelope text-red"></i> <a data-config="email" href="mailto:support@royalbet.com">support@royalbet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span data-config="copyright">RoyalBet</span>. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; color: #555;"><span data-config="footerDisclaimer">Warning: Gambling involves financial risk and can be addictive. Please play responsibly. 18+ only.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Category Filter Logic
+        document.querySelectorAll('.filter-pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                const cat = pill.getAttribute('data-category');
+                
+                document.querySelectorAll('.bet-card').forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Bet Slip Dynamic Calculation Logic
+        let selectedOddsVal = 1.0;
+        const oddsBtns = document.querySelectorAll('.odds-btn');
+        const slipEmpty = document.getElementById('slip-empty');
+        const slipContent = document.getElementById('slip-content');
+        const slipTeam = document.getElementById('slip-team');
+        const slipOdds = document.getElementById('slip-odds');
+        const slipStake = document.getElementById('slip-stake');
+        const slipReturn = document.getElementById('slip-return');
+        const slipProfit = document.getElementById('slip-profit');
+        const slipStatus = document.getElementById('slip-status');
+
+        function updateSlipCalc() {
+            const stake = parseFloat(slipStake.value) || 0;
+            const returnAmt = Math.round(stake * selectedOddsVal);
+            const profitAmt = Math.round(returnAmt - stake);
+            slipReturn.textContent = `₹${returnAmt.toLocaleString()}`;
+            slipProfit.textContent = `₹${profitAmt.toLocaleString()}`;
+        }
+
+        oddsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                oddsBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                
+                const team = btn.getAttribute('data-team');
+                selectedOddsVal = parseFloat(btn.getAttribute('data-odds'));
+
+                slipTeam.textContent = team;
+                slipOdds.textContent = selectedOddsVal.toFixed(2);
+                slipStatus.textContent = 'Active Bet';
+                slipStatus.style.background = 'rgba(76, 175, 80, 0.2)';
+                slipStatus.style.color = '#4CAF50';
+
+                slipEmpty.style.display = 'none';
+                slipContent.style.display = 'block';
+                
+                updateSlipCalc();
+                if (window.showToast) window.showToast(`Selected odds ${selectedOddsVal} for ${team}`, 'info');
+            });
+        });
+
+        if (slipStake) {
+            slipStake.addEventListener('input', updateSlipCalc);
+        }
+    </script>
+</body>
+</html>
