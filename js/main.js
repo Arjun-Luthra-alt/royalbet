@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Populate values from SITE_CONFIG
     // ----------------------------------------------------------
     if (typeof SITE_CONFIG !== 'undefined') {
-
+        
         // Site name
         document.querySelectorAll('[data-config="siteName"]').forEach(el => {
             el.textContent = SITE_CONFIG.siteName;
