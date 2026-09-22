@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-config="whatsappLink"]').forEach(el => {
             el.href = SITE_CONFIG.whatsappLink;
         });
-
+        
         // WhatsApp display number
         document.querySelectorAll('[data-config="whatsapp"]').forEach(el => {
             el.textContent = SITE_CONFIG.whatsapp;
